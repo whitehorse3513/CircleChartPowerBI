@@ -509,6 +509,7 @@ export class CircleChart implements IVisual {
         }
         let fontSizeValue: number = Math.min(width, height) / 8;
         var previous_color = "white";
+        var index = 0;
         viewModel.dataPoints.sort((a, b) => (<number>a.value - <number>b.value)).map(d => {
             var r = (height - yScale(<number>d.value)) / height * radius;
             var textValue = this.barContainer.append("text")
@@ -525,8 +526,8 @@ export class CircleChart implements IVisual {
                 previous_color = d.color;
             }
             else {
-                let x = (width / 2 + r * Math.cos(-0.75));
-                let y = (height / 2 + r * Math.sin(-0.75));
+                let x = (width / 2 + r * Math.cos(-0.75 + index * 3.14 / 2));
+                let y = (height / 2 + r * Math.sin(-0.75 + index * 3.14 / 2));
                 let dx = textValue
                     .text(d.value.toString())
                     .attr("x", x + "px")
@@ -540,6 +541,7 @@ export class CircleChart implements IVisual {
                 }
                 previous_color = d.color;
             }
+            index++;
         });
         this.handleClick(barSelectionMerged);
     }
