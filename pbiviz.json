@@ -1,0 +1,23 @@
+{
+  "visual": {
+    "name": "Circle Chart",
+    "displayName": "circleChart",
+    "guid": "PBI_CV_9894B302_1DFF_4A96_ABFE_BF8588197166",
+    "visualClassName": "CircleChart",
+    "version": "3.0.4",
+    "description": "Sample Circle chart",
+    "supportUrl": "support@mail.com",
+    "gitHubUrl": ""
+  },
+  "apiVersion": "2.6.0",
+  "author": {
+    "name": "Author name",
+    "email": "author@mail.com"
+  },
+  "assets": {
+    "icon": "assets/icon.png"
+  },
+  "externalJS": [],
+  "style": "style/visual.less",
+  "capabilities": "capabilities.json"
+}
